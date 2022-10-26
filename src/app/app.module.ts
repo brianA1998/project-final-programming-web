@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MyStoriesComponent } from './my-stories/my-stories.component';
+import { SettingsComponent } from './settings/settings.component';
+import { MyProjectsComponent } from './my-projects/my-projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
     SidenavComponent,
-    DashboardComponent
+    DashboardComponent,
+    MyStoriesComponent,
+    SettingsComponent,
+    MyProjectsComponent
   ],
   imports: [
     BrowserModule,
