@@ -3,5 +3,20 @@
         "target": "http://localhost:8080",
         "secure": false,
         "logLevel": "debug"
+    },
+    "/epics/*": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug"
+    },
+    "/stories/*": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug"
+    },
+    "/tasks/*": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "logLevel": "debug"
     }
 }
