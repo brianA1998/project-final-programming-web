@@ -18,4 +18,13 @@ export class TasksService {
     this.http.get<Task[]>('/tasks')
           .subscribe(response => this._tasks = response)
   }
+
+  public searchTasksByStory(storyId: number): Task[] {
+    let tasks: Task[] = []
+    
+    this.http.get<Task[]>('stories/' + storyId + '/tasks')
+          .subscribe(response => tasks = response)
+
+    return tasks;
+  }
 }

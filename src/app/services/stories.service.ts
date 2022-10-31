@@ -20,12 +20,12 @@ export class StoriesService {
           .subscribe(response => this._stories = response)
   }
 
-  public searchTasksByStory(storyId: number): Task[] {
-    let tasks: Task[] = []
+  public searchStoriesByEpic(epicId: number): Story[] {
+    let stories: Story[] = []
     
-    this.http.get<Task[]>('stories/' + storyId + '/tasks')
-          .subscribe(response => tasks = response)
+    this.http.get<Story[]>('/epics/' + epicId + '/stories')
+          .subscribe(response => stories = response)
 
-    return tasks;
+    return stories;
   }
 }

@@ -20,12 +20,12 @@ export class EpicsService {
           .subscribe(response => this._epics = response)
   }
 
-  public searchStoriesByEpic(epicId: number): Story[] {
-    let stories: Story[] = []
+  public searchEpicsByProjects(projectId: number): Epic[] {
+    let epics: Epic[] = []
     
-    this.http.get<Story[]>('/epics/' + epicId + '/stories')
-          .subscribe(response => stories = response)
+    this.http.get<Epic[]>('/projects/' + projectId + '/epics')
+          .subscribe(response => epics = response)
 
-    return stories;
+    return epics;
   }
 }

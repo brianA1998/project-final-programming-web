@@ -20,13 +20,4 @@ export class ProjectsService {
     this.http.get<Project[]>("/projects")
           .subscribe(response => this._projects = response)
   }
-
-  public searchEpicsByProjects(projectId: number): Epic[] {
-    let epics: Epic[] = []
-    
-    this.http.get<Epic[]>('/projects/' + projectId + '/epics')
-          .subscribe(response => epics = response)
-
-    return epics;
-  }
 }
