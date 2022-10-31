@@ -7,18 +7,15 @@ import { Task } from '../interfaces/task.interface';
 })
 export class TasksService {
   private _tasks: Task[] = [];
-  private endpoint: string;
 
-  constructor(private http: HttpClient) {
-    this.endpoint = 'http://localhost:8080/tasks';
-   }
+  constructor(private http: HttpClient) {  }
 
   get tasks(): Task[] {
     return [...this._tasks];
   }
 
   public searchTasks() {
-    this.http.get<Task[]>(this.endpoint)
+    this.http.get<Task[]>('/tasks')
           .subscribe(response => this._tasks = response)
   }
 }

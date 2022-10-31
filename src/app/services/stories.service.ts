@@ -8,25 +8,22 @@ import { Task } from '../interfaces/task.interface';
 })
 export class StoriesService {
   private _stories: Story[] = [];
-  private endpoint: string;
 
-  constructor(private http: HttpClient) {
-    this.endpoint = 'http://localhost:8080/stories';
-   }
+  constructor(private http: HttpClient) {   }
 
   get stories(): Story[] {
     return [...this._stories];
   }
 
   public saearchStories() {
-    this.http.get<Story[]>(this.endpoint)
+    this.http.get<Story[]>("/stories")
           .subscribe(response => this._stories = response)
   }
 
   public searchTasksByStory(storyId: number): Task[] {
     let tasks: Task[] = []
     
-    this.http.get<Task[]>(this.endpoint + '/' + storyId + '/tasks')
+    this.http.get<Task[]>('stories/' + storyId + '/tasks')
           .subscribe(response => tasks = response)
 
     return tasks;

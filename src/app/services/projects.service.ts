@@ -9,8 +9,7 @@ import { Epic } from '../interfaces/epic.interface';
 export class ProjectsService {
   private _projects: Project[] = [];
 
-  constructor(private http: HttpClient) {
-   }
+  constructor(private http: HttpClient) {}
 
   get projects(): Project[] {
     return [...this._projects];

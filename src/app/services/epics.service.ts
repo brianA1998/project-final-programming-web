@@ -8,25 +8,22 @@ import { Story } from '../interfaces/story.interface';
 })
 export class EpicsService {
   private _epics: Epic[] = [];
-  private endpoint: string;
 
-  constructor(private http: HttpClient) {
-    this.endpoint = 'http://localhost:8080/epics';
-   }
+  constructor(private http: HttpClient) {   }
 
   get epics(): Epic[] {
     return [...this._epics];
   }
 
   public saearchEpics() {
-    this.http.get<Epic[]>(this.endpoint)
+    this.http.get<Epic[]>("/epics")
           .subscribe(response => this._epics = response)
   }
 
   public searchStoriesByEpic(epicId: number): Story[] {
     let stories: Story[] = []
     
-    this.http.get<Story[]>(this.endpoint + '/' + epicId + '/stories')
+    this.http.get<Story[]>('/epics/' + epicId + '/stories')
           .subscribe(response => stories = response)
 
     return stories;
