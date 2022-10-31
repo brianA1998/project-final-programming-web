@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Project } from '../interfaces/project.interface';
 import { Epic } from '../interfaces/epic.interface';
 
@@ -8,10 +8,8 @@ import { Epic } from '../interfaces/epic.interface';
 })
 export class ProjectsService {
   private _projects: Project[] = [];
-  private endpoint: string;
 
   constructor(private http: HttpClient) {
-    this.endpoint = 'http://localhost:8080/projects';
    }
 
   get projects(): Project[] {
@@ -19,14 +17,15 @@ export class ProjectsService {
   }
 
   public searchProjects() {
-    this.http.get<Project[]>(this.endpoint)
+    
+    this.http.get<Project[]>("/projects")
           .subscribe(response => this._projects = response)
   }
 
   public searchEpicsByProjects(projectId: number): Epic[] {
     let epics: Epic[] = []
     
-    this.http.get<Epic[]>(this.endpoint + '/' + projectId + '/epics')
+    this.http.get<Epic[]>('/projects/' + projectId + '/epics')
           .subscribe(response => epics = response)
 
     return epics;

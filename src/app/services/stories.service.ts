@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Story } from '../interfaces/story.interface';
+import { Task } from '../interfaces/task.interface';
 
 @Injectable({
   providedIn: 'root'
