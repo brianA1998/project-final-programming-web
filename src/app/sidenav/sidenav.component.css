@@ -22,7 +22,7 @@
     text-align: center;
     width: 3rem;
     min-width: 3rem;
-    border-radius: 0.313rem;
+    border-radius:0.5rem;
     padding: 0.313rem;
     font-size: 24px;
     font-weight: 900;
@@ -108,3 +108,9 @@
     color: #8690a3
 }
 
+.icon-menu{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 80%;
+    width: 50px;
+}
