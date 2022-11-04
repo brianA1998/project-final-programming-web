@@ -1,6 +1,8 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
     <div class="logo-container">
-        <button class="logo" (click)="toggleCollapse()">A</button>
+        <button class="logo" (click)="toggleCollapse()">
+            <img src='/src/icon-menu.jpg'>
+        </button>
         <div class="logo-text" *ngIf="collapsed"></div>
 
         <div class="container-image"  *ngIf="collapsed" >
