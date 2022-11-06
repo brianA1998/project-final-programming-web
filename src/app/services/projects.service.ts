@@ -7,13 +7,17 @@ import { Epic } from '../interfaces/epic.interface';
   providedIn: 'root'
 })
 export class ProjectsService {
-  public projects: Project[] = [];
+  private _projects: Project[] = [];
 
   constructor(private http: HttpClient) {}
+
+  get projects(): Project[] {
+    return this._projects;
+  }
 
   public searchProjects() {
     
     this.http.get<Project[]>("/projects")
-          .subscribe(response => this.projects = response)
+          .subscribe(response => this._projects = response)
   }
 }
