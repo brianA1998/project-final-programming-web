@@ -12,7 +12,7 @@ export class StoriesService {
   constructor(private http: HttpClient) {   }
 
   get stories(): Story[] {
-    return [...this._stories];
+    return this._stories
   }
 
   public saearchStories() {
@@ -20,12 +20,8 @@ export class StoriesService {
           .subscribe(response => this._stories = response)
   }
 
-  public searchStoriesByEpic(epicId: number): Story[] {
-    let stories: Story[] = []
-    
+  public searchStoriesByEpic(epicId: number) {
     this.http.get<Story[]>('/epics/' + epicId + '/stories')
-          .subscribe(response => stories = response)
-
-    return stories;
+          .subscribe(response => this._stories = response)
   }
 }
