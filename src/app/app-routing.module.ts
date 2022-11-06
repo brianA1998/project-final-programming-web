@@ -8,8 +8,8 @@ import { SettingsComponent } from './settings/settings.component';
 const routes: Routes = [
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'myProjects', component: MyProjectsComponent},
-  {path: 'myStories', component: MyStoriesComponent},
+  {path: 'my-projects', component: MyProjectsComponent},
+  {path: 'my-stories', component: MyStoriesComponent},
   {path: 'settings', component: SettingsComponent},
 ];
 
