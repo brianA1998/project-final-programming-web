@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Project } from '../interfaces/project.interface';
-import { Epic } from '../interfaces/epic.interface';
 
 @Injectable({
   providedIn: 'root'
