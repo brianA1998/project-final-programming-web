@@ -5,12 +5,12 @@ export const navbarData = [
         label: 'Home'
     },
     {
-        routeLink: 'myProjects',
+        routeLink: 'my-projects',
         icon: 'fal fa-file',
         label: 'Projects'
     },
     {
-        routeLink: 'myStories',
+        routeLink: 'my-stories',
         icon: 'fal fa-file',
         label: 'Stories'
     },
