@@ -12,7 +12,7 @@ export class EpicsService {
   constructor(private http: HttpClient) {   }
 
   get epics(): Epic[] {
-    return [...this._epics];
+    return this._epics;
   }
 
   public saearchEpics() {
@@ -20,12 +20,9 @@ export class EpicsService {
           .subscribe(response => this._epics = response)
   }
 
-  public searchEpicsByProjects(projectId: number): Epic[] {
-    let epics: Epic[] = []
+  public searchEpicsByProjects(projectId: number) {
     
     this.http.get<Epic[]>('/projects/' + projectId + '/epics')
-          .subscribe(response => epics = response)
-
-    return epics;
+          .subscribe(response => this._epics = response)
   }
 }

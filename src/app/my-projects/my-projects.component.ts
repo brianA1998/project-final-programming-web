@@ -15,7 +15,7 @@ export class MyProjectsComponent implements OnInit {
     this.service.searchProjects();
   }
 
-  public test(id: number) {
+  public searchEpics(id: number) {
     this.route.navigate([this.route.url, id])
   }
 
