@@ -11,7 +11,7 @@ export class TasksService {
   constructor(private http: HttpClient) {  }
 
   get tasks(): Task[] {
-    return [...this._tasks];
+    return this._tasks;
   }
 
   public searchTasks() {
@@ -19,12 +19,12 @@ export class TasksService {
           .subscribe(response => this._tasks = response)
   }
 
-  public searchTasksByStory(storyId: number): Task[] {
-    let tasks: Task[] = []
-    
+  public searchTasksByStory(storyId: number) {
     this.http.get<Task[]>('stories/' + storyId + '/tasks')
-          .subscribe(response => tasks = response)
+          .subscribe(response => this._tasks = response)
+  }
 
-    return tasks;
+  public removeTask(task: Task) {
+    this._tasks = this._tasks.filter(item => task.id != item.id);
   }
 }

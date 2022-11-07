@@ -12,6 +12,7 @@ import { MyStoriesComponent } from './my-stories/my-stories.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { EpicsComponent } from './epics/epics.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EpicsComponent } from './epics/epics.component';
     MyStoriesComponent,
     SettingsComponent,
     MyProjectsComponent,
-    EpicsComponent
+    EpicsComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,

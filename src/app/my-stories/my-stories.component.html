@@ -3,9 +3,10 @@
     <div *ngFor="let story of service.stories" class="col-md-4 col-sm-6">
         <div class="card" (click)="searchTasks(story.id);" role="button">
             <div class="card-body">
-                <p class="card-text">
+                <h3 class="card-text">
                     {{story.name}}
-                </p>
+                </h3>
+                <p>{{story.description}}</p>
             </div>
         </div>
     </div>
