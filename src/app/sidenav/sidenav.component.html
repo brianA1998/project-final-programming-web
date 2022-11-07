@@ -1,11 +1,15 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
     <div class="logo-container">
-        <button class="logo" (click)="toggleCollapse()">A</button>
-        <div class="logo-text" *ngIf="collapsed">Angular</div>
-        <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
-            <i class="fal fa-times close-icon"></i>
+        <button class="logo" (click)="toggleCollapse()">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu7vxFkQLw6kb63LF02t434KfTJMSW-z8p7Q&usqp=CAU"  class="icon-menu">
         </button>
+        <div class="logo-text" *ngIf="collapsed"></div>
+
+        <div class="container-image"  *ngIf="collapsed" >
+            <img class="image-header" src="https://cursa.app/blog/es/wp-content/uploads/sites/3/2020/02/web-development.jpg">
+        </div>
     </div>
+
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item" *ngFor="let data of navData">
             <a  class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
