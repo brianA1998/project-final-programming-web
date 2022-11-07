@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +11,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MyStoriesComponent } from './my-stories/my-stories.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MyProjectsComponent } from './my-projects/my-projects.component';
+import { EpicsComponent } from './epics/epics.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,13 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
     DashboardComponent,
     MyStoriesComponent,
     SettingsComponent,
-    MyProjectsComponent
+    MyProjectsComponent,
+    EpicsComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

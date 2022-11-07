@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+<div class="row">
+    <div *ngFor="let task of service.tasks" class="col-md-4 col-sm-6">
+        <div class="card">
+            <div class="card-body form-check">
+                <input type="checkbox" class="form-check-input" id="{{task.id}}" [checked]="task.completed">
+                <label class="form-check-label" for="{{task.id}}"> {{task.name}} </label>
+                <button (click)="service.removeTask(task)" class="btn btn-primary">Borrar</button>
+            </div>
+        </div>
+    </div>
+</div>

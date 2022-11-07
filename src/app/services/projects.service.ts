@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Project } from '../interfaces/project.interface';
-import { Epic } from '../interfaces/epic.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class ProjectsService {
   constructor(private http: HttpClient) {}
 
   get projects(): Project[] {
-    return [...this._projects];
+    return this._projects;
   }
 
   public searchProjects() {
