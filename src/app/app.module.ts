@@ -13,6 +13,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { EpicsComponent } from './epics/epics.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TasksComponent } from './tasks/tasks.component';
     SettingsComponent,
     MyProjectsComponent,
     EpicsComponent,
-    TasksComponent
+    TasksComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
