@@ -34,13 +34,13 @@ body {
 
 .login-form {
     min-width: 300px;
-    max-width: 60%;
+    max-width: 50%;
     margin: 0px auto;
     background: rgba(255, 255, 255, 0.15);
     padding: 2rem 3rem;
     margin: auto;
     border-radius: 2.5rem;
-    background-color: #ecf0f3;
+    background-color: #d6d9db;
     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
     color: black;
     margin-top: 10rem;
@@ -72,4 +72,8 @@ body {
     border-radius: 1.5rem;
     box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
     cursor: pointer;
+  }
+
+  .login-form .title-login{
+    text-align: center;
   }
