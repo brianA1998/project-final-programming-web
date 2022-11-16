@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Epic } from '../interfaces/epic.interface';
-import { Story } from '../interfaces/story.interface';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,20 +9,31 @@ import { Story } from '../interfaces/story.interface';
 export class EpicsService {
   private _epics: Epic[] = [];
 
-  constructor(private http: HttpClient) {   }
+  constructor(private http: HttpClient, private login: LoginService) {   }
 
   get epics(): Epic[] {
     return this._epics;
   }
 
   public saearchEpics() {
-    this.http.get<Epic[]>("/epics")
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: this.login.Token
+      })
+    };
+    
+    this.http.get<Epic[]>("/epics", httpOptions)
           .subscribe(response => this._epics = response)
   }
 
   public searchEpicsByProjects(projectId: number) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: this.login.Token
+      })
+    };
     
-    this.http.get<Epic[]>('/projects/' + projectId + '/epics')
+    this.http.get<Epic[]>('/projects/' + projectId + '/epics', httpOptions)
           .subscribe(response => this._epics = response)
   }
 }

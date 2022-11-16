@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 
 
 @Component({
@@ -8,13 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent {
 
-  email: string = "";
+  username: string = "";
   password: string = "";
+
+  constructor(private service: LoginService, private route: Router) {}
 
 
   login() {
-    console.log(this.email);
-    console.log(this.password);
+    this.service.login(this.username, this.password,
+        () => {
+          this.route.navigate(["/dashboard"])
+        }
+      )
   }
 
 }
