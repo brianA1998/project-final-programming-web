@@ -6,9 +6,10 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { MyStoriesComponent } from './my-stories/my-stories.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { LoginComponent } from './login/login.component'
 
 const routes: Routes = [
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'my-projects', component: MyProjectsComponent},
   {path: 'my-projects/:id', component: EpicsComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'my-projects/:projectId/:epicId/:id', component: TasksComponent},
   {path: 'my-stories', component: MyStoriesComponent},
   {path: 'settings', component: SettingsComponent},
+  {path: 'login', component: LoginComponent},
 ];
 
 @NgModule({
