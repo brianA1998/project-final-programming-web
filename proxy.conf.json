@@ -1,26 +1,26 @@
 {
     "/projects/*": {
-        "target": "http://localhost:8080",
+        "target": "http://localhost:8081",
         "secure": false,
         "logLevel": "debug"
     },
     "/epics/*": {
-        "target": "http://localhost:8080",
+        "target": "http://localhost:8081",
         "secure": false,
         "logLevel": "debug"
     },
     "/stories/*": {
-        "target": "http://localhost:8080",
+        "target": "http://localhost:8081",
         "secure": false,
         "logLevel": "debug"
     },
     "/tasks/*": {
-        "target": "http://localhost:8080",
+        "target": "http://localhost:8081",
         "secure": false,
         "logLevel": "debug"
     },
     "/login": {
-        "target": "http://localhost:8080",
+        "target": "http://localhost:8081",
         "secure": false,
         "logLevel": "debug"
     }
