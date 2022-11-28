@@ -1,9 +1,8 @@
 import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { navbarData } from './nav-data';
 import { transition, trigger, animate, style } from '@angular/animations';
-import { ActivatedRoute, NavigationStart, Router, Event } from '@angular/router';
+import { NavigationStart, Router, Event } from '@angular/router';
 import { Location } from '@angular/common'
-import { filter } from 'rxjs';
 
 
 interface SideNavToggle {
@@ -30,7 +29,8 @@ interface SideNavToggle {
 })
 export class SidenavComponent implements OnInit {
   ocultado = true;
-  fruits: string[] = ['/my-projects', '/login', '/my-stories','/dashboard'];
+  isScreenLogin = true;
+  fruits: string[] = ['/my-projects', '/login', '/my-stories','/dashboard', '/', '/settings'];
 
   constructor(private location: Location, private router: Router) {
 
@@ -38,12 +38,12 @@ export class SidenavComponent implements OnInit {
 
    this.router.events.subscribe((event: Event) => {
     if (event instanceof NavigationStart) {
-     // console.log(event);
-      if(this.fruits.includes(event.url) ){
-        this.ocultado = true
-      }else{
-        this.ocultado = false
-      }
+      this.ocultado = this.fruits.includes(event.url)
+      this.isScreenLogin = event.url == '/login' || event.url == '/' 
+      
+      console.log("url: " + event.url);
+      console.log("ocultado: " + this.ocultado)
+      console.log("pantalla login: " + this.isScreenLogin)
     }
 });
     
